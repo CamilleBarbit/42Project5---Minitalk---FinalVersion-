@@ -65,7 +65,7 @@ void	char_to_binary(char c, pid_t pid)
 			if (kill(pid, SIGUSR1) == -1)
 				exit(1);
 		}	
-		usleep(20);
+		usleep(50);
 		i--;
 	}
 	usleep(100);
