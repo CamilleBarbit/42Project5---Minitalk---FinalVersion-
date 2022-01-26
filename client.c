@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 14:09:03 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/26 14:35:13 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,11 +126,6 @@ void	ft_check_parameters(int argc, char **argv)
 		printf("Minitalk cannot work: Wrong number of arguments!\n");
 		exit(1);
 	}
-	if(ft_atoi(argv[1]) == 0)
-	{
-		printf("Minitalk cannot work: PID equals 0!\n");
-		exit(1);
-	}
 	if (argv[1][0] == '\0')
 	{
 		printf("Minitalk cannot work: Where is the server's PID?\n");
@@ -138,7 +133,7 @@ void	ft_check_parameters(int argc, char **argv)
 	}
 	while (argv[1][i])
 	{
-		if (!(argv[1][i] >= '0' && argv[1][i] <= '9' ))
+		if (!(argv[1][i] >= '0' && argv[1][i] <= '9' ) || (ft_atoi(argv[1]) == 0))
 		{
 			printf("Minitalk cannot work : There is an error with the server's PID!\n");
 			exit(1);
