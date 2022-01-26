@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 11:20:11 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/26 11:26:57 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 //je definis 0 quand tout va bien et 1 quand il y a une erreur
 
 // #include "minitalk.h"
+//#include "libft.h"
+//#include "ft_printf.h"
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
