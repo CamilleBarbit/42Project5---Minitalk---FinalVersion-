@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 12:02:37 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/26 14:09:03 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,10 @@ void	char_to_binary(char c, pid_t pid)
 				exit(1);
 			}
 		}
-		usleep(50);
+		usleep(40);
 		i--;
 	}
-	usleep(100);
+	usleep(80);
 }
 
 
@@ -124,6 +124,11 @@ void	ft_check_parameters(int argc, char **argv)
 	if (argc != 3)
 	{
 		printf("Minitalk cannot work: Wrong number of arguments!\n");
+		exit(1);
+	}
+	if(ft_atoi(argv[1]) == 0)
+	{
+		printf("Minitalk cannot work: PID equals 0!\n");
 		exit(1);
 	}
 	if (argv[1][0] == '\0')
