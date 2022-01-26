@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 15:25:32 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/26 18:13:19 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	ft_check_parameters(int argc, char **argv)
 			i++;
 	}
 }
-
+//verifier s'il n'y a pas d'erreur si mon PID = 0230...
 
 int	main(int argc, char **argv)
 {
