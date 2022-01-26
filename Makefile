@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 11:18:56 by cbarbit           #+#    #+#              #
-#    Updated: 2022/01/26 15:13:18 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/01/26 16:42:15 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ NAME = minitalk
 CC = gcc
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror
+LFLAGS = -l
+PRINTF = ./ft_printf/libftprintf.a
 
 C_FILES_CLIENT = client.c \
 				client_utils.c\
@@ -25,15 +27,17 @@ O_FILES_CLIENT = ${C_FILES_CLIENT:.c=.o}
 O_FILES_SERVER = ${C_FILES_SERVER:.c=.o}
 
 
-
-
-${EXEC}: ${O_FILES}
-	ar rcs ${EXEC} ${O_FILES}
-
 %.o: %.c
-	${CC} ${CFLAGS} -c -g $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c $< -o $@
 
-all: ${EXEC}
+
+${NAME}: server client
+
+server: ${O_FILES_SERVER}
+	-lftprintf -L ./ft_printf
+
+
+all: ${NAME}
 
 clean:
 	${RM} ${O_FILES_CLIENT} ${RM} ${O_FILES_SERVER}
