@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:18:42 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 11:18:46 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/26 15:18:40 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define MINITALK_H
 
 #include <signal.h>
-#include <libft.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <signal.h>
+#include <stdio.h>
 
 #endif
