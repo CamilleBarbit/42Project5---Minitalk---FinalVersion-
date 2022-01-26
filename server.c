@@ -6,13 +6,15 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 11:19:12 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/26 11:26:49 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //ggc server.c -o server
 
 // #include "minitalk.h"
+//#include "libft.h"
+//#include "ft_printf.h"
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
