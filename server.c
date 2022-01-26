@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 11:26:49 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/26 11:49:54 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 char   *str = NULL; //je cree une variable globale dans laquelle je stocke tous mes chars.
 
-void    ft_putstr_fd(char *s, int fd)
+void    ft_putstr_fd(char *s, int fd) //je n'en aurai pas besoin avec la libft
 {
     while (*s)
         write(fd, s++, 1);
@@ -86,10 +86,13 @@ void    handle_signals(int signum, siginfo_t *info, void *useless)
 
     if (i < 32)
         binary_to_int(signum, i); /*je dois envoyer dans une autre fonction qui va modifier le signal recu et stocker les 32 premiers bits dans un int. */
+    if (i >= 32 && str == NULL)
+        i = 0;
     else
         binary_to_char(signum, (i % 8), ((i - 32) / 8));
     i++;
 }
+
 
 int main(void)
 {
