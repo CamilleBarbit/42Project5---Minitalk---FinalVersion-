@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 11:18:56 by cbarbit           #+#    #+#              #
-#    Updated: 2022/01/26 11:18:57 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/01/26 11:37:38 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CC = gcc
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror
 
-C_FILES = client.c server.c client_utils.c
+C_FILES =	client.c \
+			server.c \
 
 O_FILES = ${C_FILES:.c=.o}
 
