@@ -6,21 +6,12 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 14:01:51 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/26 15:21:01 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//ggc server.c -o server
-
-// #include "minitalk.h"
-//#include "libft.h"
-//#include "ft_printf.h"
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <signal.h>
-#include <stdio.h>
+#include "minitalk.h"
+#include "ft_printf.h"
 
 char   *str = NULL; //je cree une variable globale dans laquelle je stocke tous mes chars.
 
@@ -51,7 +42,6 @@ void    binary_to_int(int signum, int i)
         len = 0;
     }
 }
-
 
 void    binary_to_char(int signum, int bit, int index, int *i)
 {
@@ -94,7 +84,6 @@ void    handle_signals(int signum, siginfo_t *info, void *useless)
         binary_to_char(signum, (i % 8), ((i - 32) / 8), &i); //l'adresse de i pour le remettre a 0
     i++;
 }
-
 
 int main(void)
 {
