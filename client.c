@@ -6,59 +6,12 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 14:35:13 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/26 15:21:08 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-//je definis 0 quand tout va bien et 1 quand il y a une erreur
-
-// #include "minitalk.h"
-//#include "libft.h"
-//#include "ft_printf.h"
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <signal.h>
-#include <stdio.h>
-
-int ft_atoi(const char *str) //pas besoin une fois link avec la libf
-{
-    int i;
-    int nbr;
-    int sign;
-
-    i = 0;
-    nbr = 0;
-    sign = 1;
-    while (str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r'
-		|| str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = sign * -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nbr = nbr * 10 + str[i] - '0';
-		i++;
-	}
-	return (nbr * sign);
-}
-
-static int	ft_strlen(char *str) //cette fonction me permet de calculer la taille de mon argv[1]
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "minitalk.h"
+#include "ft_printf.h"
 
 void	char_to_binary(char c, pid_t pid)
 {
@@ -88,7 +41,6 @@ void	char_to_binary(char c, pid_t pid)
 	}
 	usleep(80);
 }
-
 
 void	int_to_binary(int c, pid_t pid) //testons en envoyant la longueur de ma chaine de caractere, soit de mon argv[2].
 {
@@ -143,7 +95,6 @@ void	ft_check_parameters(int argc, char **argv)
 	}
 }
 
-//Que se passe-t-il si le PID rentré n'est pas celui du sever?
 
 int	main(int argc, char **argv)
 {
