@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 11:26:57 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/26 12:02:37 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,23 +62,26 @@ static int	ft_strlen(char *str) //cette fonction me permet de calculer la taille
 
 void	char_to_binary(char c, pid_t pid)
 {
-	int		i;
-	int		bit;
+	int	i;
+	int	bit;
+	int	ret;
 
 	i = 7;
 	bit = 0;
+	ret = 0;
 	while (i >= 0)
 	{
 		bit = (c >> i) & 1; //cela va decaler de i rangs la version en binaire de ma lettre c.
 		if (bit == 1)
-		{
-			if (kill(pid, SIGUSR2) == -1)
-				exit(1);
-		}
+			ret = kill(pid, SIGUSR2);
 		else
+			ret = kill(pid, SIGUSR1);
 		{
-			if (kill(pid, SIGUSR1) == -1)
+			if (ret == -1)
+			{
+				write(1, "Signal Error\n", 13);
 				exit(1);
+			}
 		}
 		usleep(50);
 		i--;
