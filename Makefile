@@ -6,31 +6,37 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 11:18:56 by cbarbit           #+#    #+#              #
-#    Updated: 2022/01/26 11:37:38 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/01/26 15:13:18 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-EXEC = minitalk.a
+NAME = minitalk
 CC = gcc
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror
 
-C_FILES =	client.c \
-			server.c \
+C_FILES_CLIENT = client.c \
+				client_utils.c\
 
-O_FILES = ${C_FILES:.c=.o}
+C_FILES_SERVER = server.c
+
+O_FILES_CLIENT = ${C_FILES_CLIENT:.c=.o}
+
+O_FILES_SERVER = ${C_FILES_SERVER:.c=.o}
+
+
+
 
 ${EXEC}: ${O_FILES}
 	ar rcs ${EXEC} ${O_FILES}
 
-.c.o:
+%.o: %.c
 	${CC} ${CFLAGS} -c -g $< -o ${<:.c=.o}
 
 all: ${EXEC}
 
 clean:
-	${RM} ${O_FILES}
+	${RM} ${O_FILES_CLIENT} ${RM} ${O_FILES_SERVER}
 
 fclean: clean
 	${RM} ${EXEC}
