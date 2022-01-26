@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/26 11:19:11 by cbarbit           #+#    #+#             */
+/*   Updated: 2022/01/26 11:19:12 by cbarbit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //ggc server.c -o server
 
 // #include "minitalk.h"
@@ -23,7 +35,7 @@ void    binary_to_int(int signum, int i)
     len = 0;
     if (i < 32)
     {
-        len = len << 1; 
+        len = len << 1;
         if (signum == SIGUSR1)
             len = len + 0;
         if (signum == SIGUSR2)
@@ -37,7 +49,7 @@ void    binary_to_int(int signum, int i)
         // ft_memset(str, 0, len); //je mets des \0 dans ma string pour que ca soit propre.
     }
 }
-   
+
 
 void    binary_to_char(int signum, int bit, int index)
 {
@@ -71,9 +83,9 @@ void    handle_signals(int signum, siginfo_t *info, void *useless)
     static int  i = 0; //le i correspond au nombre de signaux que je vais recevoir.
 
     if (i < 32)
-        binary_to_int(signum, i); /*je dois envoyer dans une autre fonction qui va modifier le signal recu et stocker les 32 premiers bits dans un int. */ 
+        binary_to_int(signum, i); /*je dois envoyer dans une autre fonction qui va modifier le signal recu et stocker les 32 premiers bits dans un int. */
     else
-        binary_to_char(signum, (i % 8), ((i - 32) / 8)); 
+        binary_to_char(signum, (i % 8), ((i - 32) / 8));
     i++;
 }
 
