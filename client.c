@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
+/*   Updated: 2022/01/26 11:20:11 by cbarbit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 //je definis 0 quand tout va bien et 1 quand il y a une erreur
 
 // #include "minitalk.h"
@@ -8,7 +21,7 @@
 #include <signal.h>
 #include <stdio.h>
 
-int ft_atoi(const char *str)
+int ft_atoi(const char *str) //pas besoin une fois link avec la libf
 {
     int i;
     int nbr;
@@ -35,7 +48,7 @@ int ft_atoi(const char *str)
 	return (nbr * sign);
 }
 
-int	ft_strlen(char *str) //cette fonction me permet de calculer la taille de mon argv[1]
+static int	ft_strlen(char *str) //cette fonction me permet de calculer la taille de mon argv[1]
 {
 	int	i;
 
@@ -59,12 +72,12 @@ void	char_to_binary(char c, pid_t pid)
 		{
 			if (kill(pid, SIGUSR2) == -1)
 				exit(1);
-		}	
+		}
 		else
 		{
 			if (kill(pid, SIGUSR1) == -1)
 				exit(1);
-		}	
+		}
 		usleep(50);
 		i--;
 	}
@@ -86,12 +99,12 @@ void	int_to_binary(int c, pid_t pid) //testons en envoyant la longueur de ma cha
 		{
 			if (kill(pid, SIGUSR2) == -1)
 				exit(1);
-		}	
+		}
 		else
 		{
 			if (kill(pid, SIGUSR1) == -1) //si kill renvoie -1, cela signifie qu'il y a une erreur
 				exit(1);
-		}	
+		}
 		usleep(20);
 		i--;
 	}
