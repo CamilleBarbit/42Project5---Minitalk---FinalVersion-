@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:18:42 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 16:27:04 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/27 09:31:36 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <ctype.h>
 # include <signal.h>
 # include <stdio.h>
+# include <limits.h>
 
 static int	ft_strlen(char *str);
 int 		ft_atoi(const char *str);
