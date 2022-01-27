@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 15:21:01 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/27 10:21:31 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
 #include "ft_printf.h"
 
 char   *str = NULL; //je cree une variable globale dans laquelle je stocke tous mes chars.
