@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:18:42 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/27 10:21:07 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/01/27 11:33:50 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <stdio.h>
 # include <limits.h>
 
-static int	ft_strlen(char *str);
-int 		ft_atoi(const char *str);
+int	ft_strlen(char *str);
+int ft_atoi(const char *str);
 
 #endif
