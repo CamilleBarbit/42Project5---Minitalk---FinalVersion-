@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 18:13:19 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/27 10:21:17 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "client.h"
 #include "ft_printf.h"
 
 void	char_to_binary(char c, pid_t pid)
@@ -59,10 +59,10 @@ void	int_to_binary(int c, pid_t pid) //testons en envoyant la longueur de ma cha
 			if (kill(pid, SIGUSR1) == -1) //si kill renvoie -1, cela signifie qu'il y a une erreur
 				exit(1);
 		}
-		usleep(20);
+		usleep(40);
 		i--;
 	}
-	usleep(100);
+	usleep(80);
 }
 
 void	ft_check_parameters(int argc, char **argv)
@@ -82,7 +82,7 @@ void	ft_check_parameters(int argc, char **argv)
 	}
 	while (argv[1][i])
 	{
-		if (!(argv[1][i] >= '0' && argv[1][i] <= '9' ) || (ft_atoi(argv[1]) == 0))
+		if (!(argv[1][i] >= '0' && argv[1][i] <= '9' ) || (ft_atoi(argv[1]) == 0 || ft_atoi(argv[1] >= INT_MAX)))
 		{
 			printf("Minitalk cannot work : There is an error with the server's PID!\n");
 			exit(1);
@@ -95,19 +95,21 @@ void	ft_check_parameters(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	int		i;
+	pid_t	pid;
 
 	i = 0;
 	ft_check_parameters(argc, argv);
+	pid = atoi(argv[1]);
 	if (argc == 3)
 	{
-		int_to_binary(ft_strlen(argv[2]), atoi(argv[1])); //je lui envoie la taille de mon argv[2]
+		int_to_binary(ft_strlen(argv[2]), pid); //je lui envoie la taille de mon argv[2]
 		while (argv[2][i]) // soit while (argv[2][i] != '\0')
 		{
-			char_to_binary(argv[2][i], atoi(argv[1])); //-> cette fonction prend chaque char de argv[2] et le PID du server (soit argv[1])
+			char_to_binary(argv[2][i], pid); //-> cette fonction prend chaque char de argv[2] et le PID du server (soit argv[1])
 			i++;
 		}
-		char_to_binary('\0', atoi(argv[1])); //j'apelle la fonction une derniere fois pour envoyer le '\0'
+		char_to_binary('\0', pid); //j'apelle la fonction une derniere fois pour envoyer le '\0'
 	}
 	return (0);
 }
