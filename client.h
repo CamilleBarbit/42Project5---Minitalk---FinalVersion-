@@ -6,12 +6,12 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:18:42 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/27 09:31:36 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/01/27 10:21:07 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#ifndef CLIENT_H
+# define CLIENT_H
 
 # include <signal.h>
 # include <unistd.h>
