@@ -6,13 +6,20 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/27 10:21:17 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/01/27 11:33:05 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
-#include "ft_printf.h"
-
+// #include "ft_printf.h"
+#include <signal.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <signal.h>
+#include <stdio.h>
+#include <limits.h>
 void	char_to_binary(char c, pid_t pid)
 {
 	int	i;
@@ -82,7 +89,7 @@ void	ft_check_parameters(int argc, char **argv)
 	}
 	while (argv[1][i])
 	{
-		if (!(argv[1][i] >= '0' && argv[1][i] <= '9' ) || (ft_atoi(argv[1]) == 0 || ft_atoi(argv[1] >= INT_MAX)))
+		if (!(argv[1][i] >= '0' && argv[1][i] <= '9') || (ft_atoi(argv[1]) == 0) || (ft_atoi(argv[1]) >= INT_MAX))
 		{
 			printf("Minitalk cannot work : There is an error with the server's PID!\n");
 			exit(1);
