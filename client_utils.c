@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   client_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:17:37 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/26 15:18:16 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/27 11:33:25 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "client.h"
+#include <signal.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <signal.h>
+#include <stdio.h>
+#include <limits.h>
 
-static int	ft_strlen(char *str) //cette fonction me permet de calculer la taille de mon argv[1]
+int	ft_strlen(char *str) //cette fonction me permet de calculer la taille de mon argv[1]
 {
 	int	i;
 
