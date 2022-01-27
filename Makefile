@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
+#    By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 11:18:56 by cbarbit           #+#    #+#              #
-#    Updated: 2022/01/26 18:21:36 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/01/27 10:30:26 by camillebarb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = minitalk
 CC = gcc
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror
-LFLAGS = -lftprintf -L ./ft_printf
+LDFLAGS = -lftprintf -L ./ft_printf
 PRINTF = ./ft_printf/libftprintf.a
 
 C_FILES_CLIENT = client.c \
@@ -32,10 +32,10 @@ O_FILES_SERVER = ${C_FILES_SERVER:.c=.o}
 ${NAME}: server client
 
 server: ${O_FILES_SERVER}
-	${LFLAGS} -o $@ $+
+	${LDFLAGS} -o $@ $+
 
 client: ${O_FILES_CLIENT}
-		${LFLAGS} -o $@ $+
+	${LDFLAGS} -o $@ $+
 
 all: ${NAME}
 
