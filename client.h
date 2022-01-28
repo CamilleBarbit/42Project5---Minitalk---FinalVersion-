@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:18:42 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/27 11:33:50 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/01/28 10:44:47 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 # define CLIENT_H
 
 # include <signal.h>
-# include <unistd.h>
-# include <string.h>
-# include <stdlib.h>
-# include <ctype.h>
-# include <signal.h>
-# include <stdio.h>
 # include <limits.h>
 
 int	ft_strlen(char *str);
-int ft_atoi(const char *str);
+int	ft_atol(const char *str);
 
 #endif
