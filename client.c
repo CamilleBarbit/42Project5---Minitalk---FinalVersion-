@@ -3,23 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/27 11:33:05 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/01/28 10:39:43 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
-// #include "ft_printf.h"
-#include <signal.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <signal.h>
-#include <stdio.h>
-#include <limits.h>
+#include "ft_printf.h"
+
 void	char_to_binary(char c, pid_t pid)
 {
 	int	i;
@@ -29,7 +22,7 @@ void	char_to_binary(char c, pid_t pid)
 	bit = 0;
 	while (i >= 0)
 	{
-		bit = (c >> i) & 1; //cela va decaler de i rangs la version en binaire de ma lettre c.
+		bit = (c >> i) & 1;
 		if (bit == 1)
 		{
 			if (kill(pid, SIGUSR2) == -1)
@@ -46,7 +39,7 @@ void	char_to_binary(char c, pid_t pid)
 	usleep(80);
 }
 
-void	int_to_binary(int c, pid_t pid) //testons en envoyant la longueur de ma chaine de caractere, soit de mon argv[2].
+void	int_to_binary(int c, pid_t pid)
 {
 	int		i;
 	int		bit;
@@ -63,7 +56,7 @@ void	int_to_binary(int c, pid_t pid) //testons en envoyant la longueur de ma cha
 		}
 		else
 		{
-			if (kill(pid, SIGUSR1) == -1) //si kill renvoie -1, cela signifie qu'il y a une erreur
+			if (kill(pid, SIGUSR1) == -1) //si kill renvoie -1, cela signifie qu'il y a une erreur.
 				exit(1);
 		}
 		usleep(40);
