@@ -3,19 +3,26 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+         #
+#    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/26 11:18:56 by cbarbit           #+#    #+#              #
-#    Updated: 2022/01/27 10:30:26 by camillebarb      ###   ########.fr        #
+#    Created: 2022/01/28 12:38:50 by cbarbit           #+#    #+#              #
+#    Updated: 2022/01/28 12:39:29 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minitalk
+
 CC = gcc
+
 RM = rm -rf
+
 CFLAGS = -Wall -Wextra -Werror
+
 LDFLAGS = -lftprintf -L ./ft_printf
-PRINTF = ./ft_printf/libftprintf.a
+
+PATH = ./ft_printf/libftprintf.a
+
+FTPRINTF = libftprintf.a
 
 C_FILES_CLIENT = client.c \
 				client_utils.c\
