@@ -6,18 +6,11 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:17:37 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/28 10:44:35 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/28 12:13:32 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <signal.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <signal.h>
-#include <stdio.h>
-#include <limits.h>
+#include "client.h"
 
 int	ft_strlen(char *str)
 {
