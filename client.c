@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:39 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/28 10:39:43 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/01/28 12:02:22 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ft_check_parameters(int argc, char **argv)
 	}
 	while (argv[1][i])
 	{
-		if (!(argv[1][i] >= '0' && argv[1][i] <= '9') || (ft_atoi(argv[1]) == 0) || (ft_atoi(argv[1]) >= INT_MAX))
+		if (!(argv[1][i] >= '0' && argv[1][i] <= '9') || (ft_atoi(argv[1]) == 0) || (ft_atoi(argv[1]) > INT_MAX))
 		{
 			printf("Minitalk cannot work : There is an error with the server's PID!\n");
 			exit(1);
@@ -91,7 +91,6 @@ void	ft_check_parameters(int argc, char **argv)
 			i++;
 	}
 }
-//verifier s'il n'y a pas d'erreur si mon PID = 0230...
 
 int	main(int argc, char **argv)
 {
