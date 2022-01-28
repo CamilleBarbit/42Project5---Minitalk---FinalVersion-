@@ -3,22 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:19:11 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/01/27 11:26:16 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/01/28 10:34:00 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "ft_printf.h"
-# include <signal.h>
-# include <unistd.h>
-# include <string.h>
-# include <stdlib.h>
-# include <ctype.h>
-# include <signal.h>
-# include <stdio.h>
-# include <limits.h>
+#include "ft_printf.h"
+#include <signal.h>
+#include <limits.h>
 
 char   *str = NULL; //je cree une variable globale dans laquelle je stocke tous mes chars.
 
